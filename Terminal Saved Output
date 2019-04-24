@@ -1,0 +1,1458 @@
+Last login: Tue Apr 23 16:37:13 on ttys000
+Courtneys-MBP:~ courtneyfink$ cd ~/Desktop/coding-environment
+Courtneys-MBP:coding-environment courtneyfink$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Courtneys-MBP:coding-environment courtneyfink$ vagrant destroy
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Forcing shutdown of VM...
+==> default: Destroying VM and associated drives...
+Courtneys-MBP:coding-environment courtneyfink$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'university-bootcamp/coding-environment-v1'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: coding-environment_default_1556066329626_19038
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 3000 (guest) => 3030 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default: 
+    default: Guest Additions Version: 4.3.34
+    default: VirtualBox Version: 6.0
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/courtneyfink/Desktop/coding-environment
+Courtneys-MBP:coding-environment courtneyfink$ vagrant ssh
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-76-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Apr 24 00:39:06 UTC 2019
+
+  System load:  0.96              Processes:           86
+  Usage of /:   6.7% of 39.34GB   Users logged in:     0
+  Memory usage: 13%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Thu Nov  1 00:34:53 2018 from 10.0.2.2
+Now using node v7.10.0 (npm v4.2.0)
+
+Welcome to your coding environment!
+
+[ENV]:/vagrant $ cd /vagrant/src/splurty
+[ENV]:/vagrant/src/splurty $ git config --global user.email "courtney55@knights.ucf.edu"
+[ENV]:/vagrant/src/splurty $ git config --global user.name "Courtney Fink"
+[ENV]:/vagrant/src/splurty $ git init
+Reinitialized existing Git repository in /vagrant/src/splurty/.git/
+[ENV]:/vagrant/src/splurty $ git add --all
+[ENV]:/vagrant/src/splurty $ git commit -am "Initial commit"
+[master fe82f95] Initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+[ENV]:/vagrant/src/splurty $ git remote add origin git@github.com:courtney55/improved-octo-dollop.git
+fatal: remote origin already exists.
+[ENV]:/vagrant/src/splurty $ git push -u origin master
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[ENV]:/vagrant/src/splurty $ cat ~/.ssh/id_rsa.pub
+cat: /home/vagrant/.ssh/id_rsa.pub: No such file or directory
+[ENV]:/vagrant/src/splurty $ git push -u origin master
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[ENV]:/vagrant/src/splurty $ cat ~/.ssh/id_rsa.pub
+cat: /home/vagrant/.ssh/id_rsa.pub: No such file or directory
+[ENV]:/vagrant/src/splurty $ ssh-keygen -t rsa -b 4096 -C "courtney55@knights.ucf.edu"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vagrant/.ssh/id_rsa): /home/vagrant/.ssh/id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/vagrant/.ssh/id_rsa.
+Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub.
+The key fingerprint is:
+71:21:92:d1:54:c3:f9:a5:01:b2:5a:d6:a7:4a:ef:68 courtney55@knights.ucf.edu
+The key's randomart image is:
++--[ RSA 4096]----+
+|      o=+o=o     |
+|      ...=oo. .  |
+|        = o..+   |
+|       + o oo    |
+|      . S .      |
+|       . o       |
+|        . .      |
+|        Eo       |
+|       .. .      |
++-----------------+
+[ENV]:/vagrant/src/splurty $ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+UKHnqR6G4XNy+v/eoGCiFY/43SNtyaDsArtqyBbPy2mgWBGUag4Z5foCbuV+lfgCugeg0RcdPyK+RUUd1ii7h0b4W4VNlqxqe8rOb9FEvkKXrPaHhnx7Sr894mOLD7vy70A8GqEYuBxO3dDbFghz6Pw2o3JdCo8cbdVtLe5yCsseeBqSmMQRhss5gY+XO8q7DFghfueVRmMSIJdCoJm9cwRYGAiYVn/ToLQNo96IMGGFxdR1re+0nRvXIhgK1ORLFJ7yR6AJOQPbn1q9WC64GwaRteu5zbjHGfuXRYXX26Nfe5VqdD6wXm0lghQv2up1sQqwwfhxjFS6Xd1lB0KlHGc9zV9EXpqGZEDvx7I4fPtAquwr2/C62K9SgI0J8inqiwxFNd4FCJsLVmI6HBMpdely+9flAKSRNKfutncwRV/WP5geBsLI3Np1cjEKH3J4B8oZ2z8BFQqDWy1EOHCAK7ucX3pkVM0/1nPnX3J0psBvH6cSo0fG48yuZLfzTJ33RlOJ1YNb4sUxD/uAv2OFftNOmCR1FcJRmJExQ/ui4IyGQ7D/0BO758iM8bIP8ggjLfZI9Efu508hKcQuClaWeCH5aHK7pVTz0dFhsDc6uoUvnvW1EO0OJpD+244t/KQvludB2VDUFHw8oTazRBwRxk/7QwcIM3GJwQDCh8e/Mw== courtney55@knights.ucf.edu
+[ENV]:/vagrant/src/splurty $ git push -u origin master
+Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+Counting objects: 5, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To git@github.com:courtney55/improved-octo-dollop.git
+   d352a82..fe82f95  master -> master
+Branch master set up to track remote branch master from origin.
+[ENV]:/vagrant/src/splurty $ heroku create splurty-courtney-fink
+Enter your Heroku credentials.
+Email: courtney55@knights.ucf.edu
+Password (typing will be hidden): 
+ ▸    HTTP Error: https://api.heroku.com/login 400 Bad Request
+ ▸    Invalid response from API.
+ ▸    HTTP 400
+ ▸    {courtney55@knights.ucf.edu pI!gsly577}
+ ▸    
+ ▸    Are you behind a proxy?
+ ▸    https://devcenter.heroku.com/articles/using-the-cli#using-an-http-proxy
+[ENV]:/vagrant/src/splurty $ heroku login
+Enter your Heroku credentials:
+Email: courtney55@knights.ucf.edu
+Password: **********
+Logged in as courtney55@knights.ucf.edu
+[ENV]:/vagrant/src/splurty $ heroku create splurty-Courtney-Fink
+Creating ⬢ splurty-Courtney-Fink... !
+ ▸    Name must start with a letter, end with a letter or digit and can only
+ ▸    contain lowercase letters, digits, and dashes.
+[ENV]:/vagrant/src/splurty $ heroku create splurty-courtney-fink
+Creating ⬢ splurty-courtney-fink... done
+https://splurty-courtney-fink.herokuapp.com/ | https://git.heroku.com/splurty-courtney-fink.git
+[ENV]:/vagrant/src/splurty $ git push heroku master
+Counting objects: 94, done.
+Compressing objects: 100% (79/79), done.
+Writing objects: 100% (94/94), 23.84 KiB | 0 bytes/s, done.
+Total 94 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote:  !     Warning: Multiple default buildpacks reported the ability to handle this app. The first buildpack in the list below will be used.
+remote: 			Detected buildpacks: Ruby,Node.js
+remote: 			See https://devcenter.heroku.com/articles/buildpacks#buildpack-detect-order
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.5.3
+remote: -----> Installing dependencies using bundler 1.15.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.17.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:        Fetching gem metadata from https://rubygems.org/............
+remote:        Fetching version metadata from https://rubygems.org/..
+remote:        Fetching dependency metadata from https://rubygems.org/.
+remote:        Fetching rake 12.3.2
+remote:        Fetching concurrent-ruby 1.1.5
+remote:        Fetching minitest 5.11.3
+remote:        Installing rake 12.3.2
+remote:        Installing minitest 5.11.3
+remote:        Installing concurrent-ruby 1.1.5
+remote:        Fetching thread_safe 0.3.6
+remote:        Installing thread_safe 0.3.6
+remote:        Fetching builder 3.2.3
+remote:        Installing builder 3.2.3
+remote:        Fetching erubi 1.8.0
+remote:        Installing erubi 1.8.0
+remote:        Fetching mini_portile2 2.4.0
+remote:        Fetching crass 1.0.4
+remote:        Installing mini_portile2 2.4.0
+remote:        Installing crass 1.0.4
+remote:        Fetching rack 2.0.7
+remote:        Fetching nio4r 2.3.1
+remote:        Fetching websocket-extensions 0.1.3
+remote:        Installing websocket-extensions 0.1.3
+remote:        Installing nio4r 2.3.1 with native extensions
+remote:        Fetching mini_mime 1.0.1
+remote:        Installing rack 2.0.7
+remote:        Installing mini_mime 1.0.1
+remote:        Fetching arel 9.0.0
+remote:        Installing arel 9.0.0
+remote:        Fetching mimemagic 0.3.3
+remote:        Installing mimemagic 0.3.3
+remote:        Fetching msgpack 1.2.10
+remote:        Installing msgpack 1.2.10 with native extensions
+remote:        Using bundler 1.15.2
+remote:        Fetching coffee-script-source 1.12.2
+remote:        Installing coffee-script-source 1.12.2
+remote:        Fetching execjs 2.7.0
+remote:        Installing execjs 2.7.0
+remote:        Fetching method_source 0.9.2
+remote:        Installing method_source 0.9.2
+remote:        Fetching thor 0.20.3
+remote:        Installing thor 0.20.3
+remote:        Fetching ffi 1.10.0
+remote:        Installing ffi 1.10.0 with native extensions
+remote:        Fetching multi_json 1.13.1
+remote:        Installing multi_json 1.13.1
+remote:        Fetching pg 1.1.4
+remote:        Installing pg 1.1.4 with native extensions
+remote:        Fetching puma 3.12.1
+remote:        Installing puma 3.12.1 with native extensions
+remote:        Fetching rb-fsevent 0.10.3
+remote:        Installing rb-fsevent 0.10.3
+remote:        Fetching tilt 2.0.9
+remote:        Installing tilt 2.0.9
+remote:        Fetching turbolinks-source 5.2.0
+remote:        Installing turbolinks-source 5.2.0
+remote:        Fetching tzinfo 1.2.5
+remote:        Installing tzinfo 1.2.5
+remote:        Fetching i18n 1.6.0
+remote:        Installing i18n 1.6.0
+remote:        Fetching nokogiri 1.10.3
+remote:        Installing nokogiri 1.10.3 with native extensions
+remote:        Fetching websocket-driver 0.7.0
+remote:        Installing websocket-driver 0.7.0 with native extensions
+remote:        Fetching mail 2.7.1
+remote:        Installing mail 2.7.1
+remote:        Fetching rack-test 1.1.0
+remote:        Installing rack-test 1.1.0
+remote:        Fetching sprockets 3.7.2
+remote:        Installing sprockets 3.7.2
+remote:        Fetching marcel 0.3.3
+remote:        Installing marcel 0.3.3
+remote:        Fetching coffee-script 2.4.1
+remote:        Installing coffee-script 2.4.1
+remote:        Fetching uglifier 4.1.20
+remote:        Installing uglifier 4.1.20
+remote:        Fetching bootsnap 1.4.3
+remote:        Installing bootsnap 1.4.3 with native extensions
+remote:        Fetching rb-inotify 0.10.0
+remote:        Installing rb-inotify 0.10.0
+remote:        Fetching turbolinks 5.2.0
+remote:        Installing turbolinks 5.2.0
+remote:        Fetching activesupport 5.2.3
+remote:        Installing activesupport 5.2.3
+remote:        Fetching loofah 2.2.3
+remote:        Installing loofah 2.2.3
+remote:        Fetching sass-listen 4.0.0
+remote:        Installing sass-listen 4.0.0
+remote:        Fetching rails-html-sanitizer 1.0.4
+remote:        Installing rails-html-sanitizer 1.0.4
+remote:        Fetching rails-dom-testing 2.0.3
+remote:        Fetching globalid 0.4.2
+remote:        Installing globalid 0.4.2
+remote:        Installing rails-dom-testing 2.0.3
+remote:        Fetching activemodel 5.2.3
+remote:        Fetching jbuilder 2.8.0
+remote:        Installing activemodel 5.2.3
+remote:        Installing jbuilder 2.8.0
+remote:        Fetching sass 3.7.4
+remote:        Installing sass 3.7.4
+remote:        Fetching activejob 5.2.3
+remote:        Installing activejob 5.2.3
+remote:        Fetching actionview 5.2.3
+remote:        Fetching activerecord 5.2.3
+remote:        Installing actionview 5.2.3
+remote:        Installing activerecord 5.2.3
+remote:        Fetching actionpack 5.2.3
+remote:        Installing actionpack 5.2.3
+remote:        Fetching actioncable 5.2.3
+remote:        Fetching actionmailer 5.2.3
+remote:        Fetching railties 5.2.3
+remote:        Installing actionmailer 5.2.3
+remote:        Installing actioncable 5.2.3
+remote:        Installing railties 5.2.3
+remote:        Fetching sprockets-rails 3.2.1
+remote:        Installing sprockets-rails 3.2.1
+remote:        Fetching activestorage 5.2.3
+remote:        Installing activestorage 5.2.3
+remote:        Fetching rails 5.2.3
+remote:        Fetching sass-rails 5.0.7
+remote:        Fetching coffee-rails 4.2.2
+remote:        Installing coffee-rails 4.2.2
+remote:        Installing sass-rails 5.0.7
+remote:        Installing rails 5.2.3
+remote:        Bundle complete! 18 Gemfile dependencies, 61 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Post-install message from i18n:
+remote:        
+remote:        HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+remote:        But that may break your application.
+remote:        
+remote:        Please check your Rails app for 'config.i18n.fallbacks = true'.
+remote:        If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+remote:        'config.i18n.fallbacks = [I18n.default_locale]'.
+remote:        If not, fallbacks will be broken in your app by I18n 1.1.x.
+remote:        
+remote:        For more info see:
+remote:        https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+remote:        
+remote:        Post-install message from sass:
+remote:        
+remote:        Ruby Sass has reached end-of-life and should no longer be used.
+remote:        
+remote:        * If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+remote:          primary implementation: https://sass-lang.com/install
+remote:        
+remote:        * If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+remote:          sassc gem: https://github.com/sass/sassc-ruby#readme
+remote:        
+remote:        * For more details, please refer to the Sass blog:
+remote:          https://sass-lang.com/blog/posts/7828841
+remote:        
+remote:        Bundle completed (52.60s)
+remote:        Cleaning up the bundler cache.
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.17.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:        The latest bundler is 2.0.1, but you are currently running 1.15.2.
+remote:        To update, run `gem install bundler`
+remote: -----> Installing node-v10.14.1-linux-x64
+remote: -----> Detecting rake tasks
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        Yarn executable was not detected in the system.
+remote:        Download Yarn at https://yarnpkg.com/en/docs/install
+remote:        I, [2019-04-24T01:17:22.760212 #1431]  INFO -- : Writing /tmp/build_b59348dc78ad627d092577981044e16d/public/assets/application-d25752b9ab667418e852ef42e1f03f47bd57a7d382318572379f2740fd4b6c95.js
+remote:        I, [2019-04-24T01:17:22.760743 #1431]  INFO -- : Writing /tmp/build_b59348dc78ad627d092577981044e16d/public/assets/application-d25752b9ab667418e852ef42e1f03f47bd57a7d382318572379f2740fd4b6c95.js.gz
+remote:        I, [2019-04-24T01:17:22.767595 #1431]  INFO -- : Writing /tmp/build_b59348dc78ad627d092577981044e16d/public/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css
+remote:        I, [2019-04-24T01:17:22.768242 #1431]  INFO -- : Writing /tmp/build_b59348dc78ad627d092577981044e16d/public/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css.gz
+remote:        Asset precompilation completed (3.82s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote: -----> Detecting rails configuration
+remote: 
+remote: ###### WARNING:
+remote: 
+remote:        You set your `config.active_storage.service` to :local in production.
+remote:        If you are uploading files to this app, they will not persist after the app
+remote:        is restarted, on one-off dynos, or if the app has multiple dynos
+remote:        Heroku applications have an ephemeral file system. To
+remote:        persist uploaded files, please use a service such as S3 and update your Rails
+remote:        configuration.
+remote:        
+remote:        For more information can be found in this article:
+remote:          https://devcenter.heroku.com/articles/active-storage-on-heroku
+remote:        
+remote: 
+remote: ###### WARNING:
+remote: 
+remote:        We detected that some binary dependencies required to
+remote:        use all the preview features of Active Storage are not
+remote:        present on this system.
+remote:        
+remote:        For more information please see:
+remote:          https://devcenter.heroku.com/articles/active-storage-on-heroku
+remote:        
+remote: 
+remote: ###### WARNING:
+remote: 
+remote:        No Procfile detected, using the default web server.
+remote:        We recommend explicitly declaring how to boot your server process via a Procfile.
+remote:        https://devcenter.heroku.com/articles/ruby-default-web-server
+remote: 
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> console, rake, web
+remote: 
+remote: -----> Compressing...
+remote:        Done: 41.9M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://splurty-courtney-fink.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/splurty-courtney-fink.git
+ * [new branch]      master -> master
+[ENV]:/vagrant/src/splurty $ heroku apps:info
+=== splurty-courtney-fink
+Addons:         heroku-postgresql:hobby-dev
+Auto Cert Mgmt: false
+Dynos:          web: 1
+Git URL:        https://git.heroku.com/splurty-courtney-fink.git
+Owner:          courtney55@knights.ucf.edu
+Region:         us
+Repo Size:      38 KB
+Slug Size:      42 MB
+Stack:          heroku-18
+Web URL:        https://splurty-courtney-fink.herokuapp.com/
+[ENV]:/vagrant/src/splurty $ rails generate controller quotes
+Traceback (most recent call last):
+	22: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/bin/spring:49:in `<main>'
+	21: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+	20: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+	19: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/client/server.rb:9:in `call'
+	18: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	17: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	16: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/server.rb:9:in `<top (required)>'
+	15: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	14: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	13: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/commands.rb:4:in `<top (required)>'
+	12: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/spring-2.0.2/lib/spring/commands.rb:33:in `<module:Spring>'
+	11: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	10: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require'
+	 9: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/setup.rb:20:in `<top (required)>'
+	 8: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler.rb:107:in `setup'
+	 7: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/runtime.rb:20:in `setup'
+	 6: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/runtime.rb:108:in `block in definition_method'
+	 5: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/definition.rb:226:in `requested_specs'
+	 4: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/definition.rb:237:in `specs_for'
+	 3: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/definition.rb:170:in `specs'
+	 2: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/spec_set.rb:85:in `materialize'
+	 1: from /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/spec_set.rb:85:in `map!'
+/home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/bundler-1.17.1/lib/bundler/spec_set.rb:91:in `block in materialize': Could not find rake-12.3.2 in any of the sources (Bundler::GemNotFound)
+[ENV]:/vagrant/src/splurty $ cd /vagrant/src/rails-test-app
+[ENV]:/vagrant/src/rails-test-app $ cd ..
+[ENV]:/vagrant/src $ ls
+es6-playground	rails-test-app	splurty
+[ENV]:/vagrant/src $ cd splurty/
+[ENV]:/vagrant/src/splurty $ rails s
+Could not find rake-12.3.2 in any of the sources
+Run `bundle install` to install missing gems.
+[ENV]:/vagrant/src/splurty $ bundle install
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+rails server
+[ENV]:/vagrant/src/splurty $
+Fetching gem metadata from https://rubygems.org/..............
+Fetching rake 12.3.2
+Installing rake 12.3.2
+Fetching concurrent-ruby 1.1.5
+Installing concurrent-ruby 1.1.5
+Fetching i18n 1.6.0
+Installing i18n 1.6.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Fetching activesupport 5.2.3
+Installing activesupport 5.2.3
+Using builder 3.2.3
+Fetching erubi 1.8.0
+Installing erubi 1.8.0
+Fetching mini_portile2 2.4.0
+Installing mini_portile2 2.4.0
+Fetching nokogiri 1.10.3
+Installing nokogiri 1.10.3 with native extensions
+Using rails-dom-testing 2.0.3
+Using crass 1.0.4
+Fetching loofah 2.2.3
+Installing loofah 2.2.3
+Using rails-html-sanitizer 1.0.4
+Fetching actionview 5.2.3
+Installing actionview 5.2.3
+Fetching rack 2.0.7
+Installing rack 2.0.7
+Using rack-test 1.1.0
+Fetching actionpack 5.2.3
+Installing actionpack 5.2.3
+Using nio4r 2.3.1
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.7.0
+Fetching actioncable 5.2.3
+Installing actioncable 5.2.3
+Fetching globalid 0.4.2
+Installing globalid 0.4.2
+Fetching activejob 5.2.3
+Installing activejob 5.2.3
+Using mini_mime 1.0.1
+Using mail 2.7.1
+Fetching actionmailer 5.2.3
+Installing actionmailer 5.2.3
+Fetching activemodel 5.2.3
+Installing activemodel 5.2.3
+Using arel 9.0.0
+Fetching activerecord 5.2.3
+Installing activerecord 5.2.3
+Fetching mimemagic 0.3.3
+Installing mimemagic 0.3.3
+Using marcel 0.3.3
+Fetching activestorage 5.2.3
+Installing activestorage 5.2.3
+Using public_suffix 3.0.3
+Fetching addressable 2.6.0
+Installing addressable 2.6.0
+Using io-like 0.3.0
+Fetching archive-zip 0.12.0
+Installing archive-zip 0.12.0
+Fetching bindex 0.7.0
+Installing bindex 0.7.0 with native extensions
+Fetching msgpack 1.2.10
+Installing msgpack 1.2.10 with native extensions
+Fetching bootsnap 1.4.3
+Installing bootsnap 1.4.3 with native extensions
+Using bundler 1.17.1
+Fetching byebug 11.0.1
+Installing byebug 11.0.1 with native extensions
+Fetching regexp_parser 1.4.0
+Installing regexp_parser 1.4.0
+Using xpath 3.2.0
+Fetching capybara 3.18.0
+Installing capybara 3.18.0
+Fetching childprocess 1.0.1
+Installing childprocess 1.0.1 with native extensions
+Fetching chromedriver-helper 2.1.1
+Installing chromedriver-helper 2.1.1
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Fetching method_source 0.9.2
+Installing method_source 0.9.2
+Fetching thor 0.20.3
+Installing thor 0.20.3
+Fetching railties 5.2.3
+Installing railties 5.2.3
+Using coffee-rails 4.2.2
+Fetching ffi 1.10.0
+Installing ffi 1.10.0 with native extensions
+Using multi_json 1.13.1
+Fetching jbuilder 2.8.0
+Installing jbuilder 2.8.0
+Using rb-fsevent 0.10.3
+Fetching rb-inotify 0.10.0
+Installing rb-inotify 0.10.0
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Fetching pg 1.1.4
+Installing pg 1.1.4 with native extensions
+Fetching puma 3.12.1
+Installing puma 3.12.1 with native extensions
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.1
+Fetching rails 5.2.3
+Installing rails 5.2.3
+Using rubyzip 1.2.2
+Using sass-listen 4.0.0
+Fetching sass 3.7.4
+Installing sass 3.7.4
+Fetching tilt 2.0.9
+Installing tilt 2.0.9
+Using sass-rails 5.0.7
+Fetching selenium-webdriver 3.141.5926
+Installing selenium-webdriver 3.141.5926
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.0
+Fetching uglifier 4.1.20
+Installing uglifier 4.1.20
+Using web-console 3.7.0
+Bundle complete! 18 Gemfile dependencies, 79 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from i18n:
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Post-install message from chromedriver-helper:
+
+  +--------------------------------------------------------------------+
+  |                                                                    |
+  |  NOTICE: chromedriver-helper is deprecated after 2019-03-31.       |
+  |                                                                    |
+  |  Please update to use the 'webdrivers' gem instead.                |
+  |  See https://github.com/flavorjones/chromedriver-helper/issues/83  |
+  |                                                                    |
+  +--------------------------------------------------------------------+
+
+Post-install message from sass:
+
+Ruby Sass has reached end-of-life and should no longer be used.
+
+* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+  primary implementation: https://sass-lang.com/install
+
+* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+  sassc gem: https://github.com/sass/sassc-ruby#readme
+
+* For more details, please refer to the Sass blog:
+  https://sass-lang.com/blog/posts/7828841
+
+[ENV]:/vagrant/src/splurty $ rails server
+=> Booting Puma
+=> Rails 5.2.3 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.1 (ruby 2.5.3-p105), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+^C- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2019-04-24 02:31:57 +0000 ===
+- Goodbye!
+Exiting
+[ENV]:/vagrant/src/splurty $ rails server -h
+Usage:
+  rails server [puma, thin etc] [options]
+
+Options:
+  -p, [--port=port]                        # Runs Rails on the specified port - defaults to 3000.
+  -b, [--binding=IP]                       # Binds Rails to the specified IP - defaults to 'localhost' in development and '0.0.0.0' in other environments'.
+  -c, [--config=file]                      # Uses a custom rackup configuration.
+                                           # Default: config.ru
+  -d, [--daemon], [--no-daemon]            # Runs server as a Daemon.
+  -e, [--environment=name]                 # Specifies the environment to run this server under (development/test/production).
+  -P, [--pid=PID]                          # Specifies the PID file.
+                                           # Default: tmp/pids/server.pid
+  -C, [--dev-caching], [--no-dev-caching]  # Specifies whether to perform caching in development.
+      [--early-hints], [--no-early-hints]  # Enables HTTP/2 early hints.
+
+
+[ENV]:/vagrant/src/splurty $ rails server
+=> Booting Puma
+=> Rails 5.2.3 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.1 (ruby 2.5.3-p105), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+Courtneys-MBP:coding-environment courtneyfink$ rails server
+Rails is not currently installed on this system. To get the latest version, simply type:
+
+    $ sudo gem install rails
+
+You can then rerun your "rails" command.
+Courtneys-MBP:coding-environment courtneyfink$ sudo gem install rails
+Password:
+Fetching: concurrent-ruby-1.1.5.gem (100%)
+Successfully installed concurrent-ruby-1.1.5
+Fetching: i18n-1.6.0.gem (100%)
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Successfully installed i18n-1.6.0
+Fetching: thread_safe-0.3.6.gem (100%)
+Successfully installed thread_safe-0.3.6
+Fetching: tzinfo-1.2.5.gem (100%)
+Successfully installed tzinfo-1.2.5
+Fetching: activesupport-5.2.3.gem (100%)
+Successfully installed activesupport-5.2.3
+Fetching: rack-2.0.7.gem (100%)
+Successfully installed rack-2.0.7
+Fetching: rack-test-1.1.0.gem (100%)
+Successfully installed rack-test-1.1.0
+Fetching: crass-1.0.4.gem (100%)
+Successfully installed crass-1.0.4
+Fetching: mini_portile2-2.4.0.gem (100%)
+Successfully installed mini_portile2-2.4.0
+Fetching: nokogiri-1.10.3.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed nokogiri-1.10.3
+Fetching: loofah-2.2.3.gem (100%)
+Successfully installed loofah-2.2.3
+Fetching: rails-html-sanitizer-1.0.4.gem (100%)
+Successfully installed rails-html-sanitizer-1.0.4
+Fetching: rails-dom-testing-2.0.3.gem (100%)
+Successfully installed rails-dom-testing-2.0.3
+Fetching: builder-3.2.3.gem (100%)
+Successfully installed builder-3.2.3
+Fetching: erubi-1.8.0.gem (100%)
+Successfully installed erubi-1.8.0
+Fetching: actionview-5.2.3.gem (100%)
+Successfully installed actionview-5.2.3
+Fetching: actionpack-5.2.3.gem (100%)
+Successfully installed actionpack-5.2.3
+Fetching: activemodel-5.2.3.gem (100%)
+Successfully installed activemodel-5.2.3
+Fetching: arel-9.0.0.gem (100%)
+Successfully installed arel-9.0.0
+Fetching: activerecord-5.2.3.gem (100%)
+Successfully installed activerecord-5.2.3
+Fetching: globalid-0.4.2.gem (100%)
+Successfully installed globalid-0.4.2
+Fetching: activejob-5.2.3.gem (100%)
+Successfully installed activejob-5.2.3
+Fetching: mini_mime-1.0.1.gem (100%)
+Successfully installed mini_mime-1.0.1
+Fetching: mail-2.7.1.gem (100%)
+Successfully installed mail-2.7.1
+Fetching: actionmailer-5.2.3.gem (100%)
+Successfully installed actionmailer-5.2.3
+Fetching: nio4r-2.3.1.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed nio4r-2.3.1
+Fetching: websocket-extensions-0.1.3.gem (100%)
+Successfully installed websocket-extensions-0.1.3
+Fetching: websocket-driver-0.7.0.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed websocket-driver-0.7.0
+Fetching: actioncable-5.2.3.gem (100%)
+Successfully installed actioncable-5.2.3
+Fetching: mimemagic-0.3.3.gem (100%)
+Successfully installed mimemagic-0.3.3
+Fetching: marcel-0.3.3.gem (100%)
+Successfully installed marcel-0.3.3
+Fetching: activestorage-5.2.3.gem (100%)
+Successfully installed activestorage-5.2.3
+Fetching: thor-0.20.3.gem (100%)
+Successfully installed thor-0.20.3
+Fetching: method_source-0.9.2.gem (100%)
+Successfully installed method_source-0.9.2
+Fetching: railties-5.2.3.gem (100%)
+Successfully installed railties-5.2.3
+Fetching: bundler-2.0.1.gem (100%)
+Successfully installed bundler-2.0.1
+Fetching: sprockets-3.7.2.gem (100%)
+Successfully installed sprockets-3.7.2
+Fetching: sprockets-rails-3.2.1.gem (100%)
+Successfully installed sprockets-rails-3.2.1
+Fetching: rails-5.2.3.gem (100%)
+Successfully installed rails-5.2.3
+Parsing documentation for concurrent-ruby-1.1.5
+Installing ri documentation for concurrent-ruby-1.1.5
+Parsing documentation for i18n-1.6.0
+Installing ri documentation for i18n-1.6.0
+Parsing documentation for thread_safe-0.3.6
+Installing ri documentation for thread_safe-0.3.6
+Parsing documentation for tzinfo-1.2.5
+Installing ri documentation for tzinfo-1.2.5
+Parsing documentation for activesupport-5.2.3
+Installing ri documentation for activesupport-5.2.3
+Parsing documentation for rack-2.0.7
+Installing ri documentation for rack-2.0.7
+Parsing documentation for rack-test-1.1.0
+Installing ri documentation for rack-test-1.1.0
+Parsing documentation for crass-1.0.4
+Installing ri documentation for crass-1.0.4
+Parsing documentation for mini_portile2-2.4.0
+Installing ri documentation for mini_portile2-2.4.0
+Parsing documentation for nokogiri-1.10.3
+Installing ri documentation for nokogiri-1.10.3
+Parsing documentation for loofah-2.2.3
+Installing ri documentation for loofah-2.2.3
+Parsing documentation for rails-html-sanitizer-1.0.4
+Installing ri documentation for rails-html-sanitizer-1.0.4
+Parsing documentation for rails-dom-testing-2.0.3
+Installing ri documentation for rails-dom-testing-2.0.3
+Parsing documentation for builder-3.2.3
+Installing ri documentation for builder-3.2.3
+Parsing documentation for erubi-1.8.0
+Installing ri documentation for erubi-1.8.0
+Parsing documentation for actionview-5.2.3
+Installing ri documentation for actionview-5.2.3
+Parsing documentation for actionpack-5.2.3
+Installing ri documentation for actionpack-5.2.3
+Parsing documentation for activemodel-5.2.3
+Installing ri documentation for activemodel-5.2.3
+Parsing documentation for arel-9.0.0
+Installing ri documentation for arel-9.0.0
+Parsing documentation for activerecord-5.2.3
+Installing ri documentation for activerecord-5.2.3
+Parsing documentation for globalid-0.4.2
+Installing ri documentation for globalid-0.4.2
+Parsing documentation for activejob-5.2.3
+Installing ri documentation for activejob-5.2.3
+Parsing documentation for mini_mime-1.0.1
+Installing ri documentation for mini_mime-1.0.1
+Parsing documentation for mail-2.7.1
+Installing ri documentation for mail-2.7.1
+Parsing documentation for actionmailer-5.2.3
+Installing ri documentation for actionmailer-5.2.3
+Parsing documentation for nio4r-2.3.1
+Installing ri documentation for nio4r-2.3.1
+Parsing documentation for websocket-extensions-0.1.3
+Installing ri documentation for websocket-extensions-0.1.3
+Parsing documentation for websocket-driver-0.7.0
+Installing ri documentation for websocket-driver-0.7.0
+Parsing documentation for actioncable-5.2.3
+Installing ri documentation for actioncable-5.2.3
+Parsing documentation for mimemagic-0.3.3
+Installing ri documentation for mimemagic-0.3.3
+Parsing documentation for marcel-0.3.3
+Installing ri documentation for marcel-0.3.3
+Parsing documentation for activestorage-5.2.3
+Installing ri documentation for activestorage-5.2.3
+Parsing documentation for thor-0.20.3
+Installing ri documentation for thor-0.20.3
+Parsing documentation for method_source-0.9.2
+Installing ri documentation for method_source-0.9.2
+Parsing documentation for railties-5.2.3
+Installing ri documentation for railties-5.2.3
+Parsing documentation for bundler-2.0.1
+Installing ri documentation for bundler-2.0.1
+Parsing documentation for sprockets-3.7.2
+Installing ri documentation for sprockets-3.7.2
+Parsing documentation for sprockets-rails-3.2.1
+Installing ri documentation for sprockets-rails-3.2.1
+Parsing documentation for rails-5.2.3
+Installing ri documentation for rails-5.2.3
+Done installing documentation for concurrent-ruby, i18n, thread_safe, tzinfo, activesupport, rack, rack-test, crass, mini_portile2, nokogiri, loofah, rails-html-sanitizer, rails-dom-testing, builder, erubi, actionview, actionpack, activemodel, arel, activerecord, globalid, activejob, mini_mime, mail, actionmailer, nio4r, websocket-extensions, websocket-driver, actioncable, mimemagic, marcel, activestorage, thor, method_source, railties, bundler, sprockets, sprockets-rails, rails after 58 seconds
+39 gems installed
+Courtneys-MBP:coding-environment courtneyfink$ rails server
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-namespace], [--no-skip-namespace]            # Skip namespace (affects only isolated applications)
+  -r, [--ruby=PATH]                                        # Path to the Ruby binary of your choice
+                                                           # Default: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
+  -m, [--template=TEMPLATE]                                # Path to some application template (can be a filesystem path or URL)
+  -d, [--database=DATABASE]                                # Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                           # Default: sqlite3
+      [--skip-yarn], [--no-skip-yarn]                      # Don't use Yarn for managing JavaScript dependencies
+      [--skip-gemfile], [--no-skip-gemfile]                # Don't create a Gemfile
+  -G, [--skip-git], [--no-skip-git]                        # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                    # Skip source control .keep files
+  -M, [--skip-action-mailer], [--no-skip-action-mailer]    # Skip Action Mailer files
+  -O, [--skip-active-record], [--no-skip-active-record]    # Skip Active Record files
+      [--skip-active-storage], [--no-skip-active-storage]  # Skip Active Storage files
+  -P, [--skip-puma], [--no-skip-puma]                      # Skip Puma related files
+  -C, [--skip-action-cable], [--no-skip-action-cable]      # Skip Action Cable files
+  -S, [--skip-sprockets], [--no-skip-sprockets]            # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                  # Don't install Spring application preloader
+      [--skip-listen], [--no-skip-listen]                  # Don't generate configuration that depends on the listen gem
+      [--skip-coffee], [--no-skip-coffee]                  # Don't use CoffeeScript
+  -J, [--skip-javascript], [--no-skip-javascript]          # Skip JavaScript files
+      [--skip-turbolinks], [--no-skip-turbolinks]          # Skip turbolinks gem
+  -T, [--skip-test], [--no-skip-test]                      # Skip test files
+      [--skip-system-test], [--no-skip-system-test]        # Skip system test files
+      [--skip-bootsnap], [--no-skip-bootsnap]              # Skip bootsnap gem
+      [--dev], [--no-dev]                                  # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                                # Setup the application with Gemfile pointing to Rails repository
+      [--rc=RC]                                            # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                              # Skip loading of extra configuration options from .railsrc file
+      [--api], [--no-api]                                  # Preconfigure smaller stack for API only apps
+  -B, [--skip-bundle], [--no-skip-bundle]                  # Don't run bundle install
+      [--webpack=WEBPACK]                                  # Preconfigure for app-like JavaScript with Webpack (options: react/vue/angular/elm/stimulus)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+Courtneys-MBP:coding-environment courtneyfink$ rails
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-namespace], [--no-skip-namespace]            # Skip namespace (affects only isolated applications)
+  -r, [--ruby=PATH]                                        # Path to the Ruby binary of your choice
+                                                           # Default: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
+  -m, [--template=TEMPLATE]                                # Path to some application template (can be a filesystem path or URL)
+  -d, [--database=DATABASE]                                # Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                           # Default: sqlite3
+      [--skip-yarn], [--no-skip-yarn]                      # Don't use Yarn for managing JavaScript dependencies
+      [--skip-gemfile], [--no-skip-gemfile]                # Don't create a Gemfile
+  -G, [--skip-git], [--no-skip-git]                        # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                    # Skip source control .keep files
+  -M, [--skip-action-mailer], [--no-skip-action-mailer]    # Skip Action Mailer files
+  -O, [--skip-active-record], [--no-skip-active-record]    # Skip Active Record files
+      [--skip-active-storage], [--no-skip-active-storage]  # Skip Active Storage files
+  -P, [--skip-puma], [--no-skip-puma]                      # Skip Puma related files
+  -C, [--skip-action-cable], [--no-skip-action-cable]      # Skip Action Cable files
+  -S, [--skip-sprockets], [--no-skip-sprockets]            # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                  # Don't install Spring application preloader
+      [--skip-listen], [--no-skip-listen]                  # Don't generate configuration that depends on the listen gem
+      [--skip-coffee], [--no-skip-coffee]                  # Don't use CoffeeScript
+  -J, [--skip-javascript], [--no-skip-javascript]          # Skip JavaScript files
+      [--skip-turbolinks], [--no-skip-turbolinks]          # Skip turbolinks gem
+  -T, [--skip-test], [--no-skip-test]                      # Skip test files
+      [--skip-system-test], [--no-skip-system-test]        # Skip system test files
+      [--skip-bootsnap], [--no-skip-bootsnap]              # Skip bootsnap gem
+      [--dev], [--no-dev]                                  # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                                # Setup the application with Gemfile pointing to Rails repository
+      [--rc=RC]                                            # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                              # Skip loading of extra configuration options from .railsrc file
+      [--api], [--no-api]                                  # Preconfigure smaller stack for API only apps
+  -B, [--skip-bundle], [--no-skip-bundle]                  # Don't run bundle install
+      [--webpack=WEBPACK]                                  # Preconfigure for app-like JavaScript with Webpack (options: react/vue/angular/elm/stimulus)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+Courtneys-MBP:coding-environment courtneyfink$ rails new
+No value provided for required arguments 'app_path'
+Courtneys-MBP:coding-environment courtneyfink$ rails new ~/vagrant/src/splurty
+      create  
+      create  README.md
+      create  Rakefile
+      create  .ruby-version
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+         run  git init from "."
+Initialized empty Git repository in /Users/courtneyfink/vagrant/src/splurty/.git/
+      create  package.json
+      create  app
+      create  app/assets/config/manifest.js
+      create  app/assets/javascripts/application.js
+      create  app/assets/javascripts/cable.js
+      create  app/assets/stylesheets/application.css
+      create  app/channels/application_cable/channel.rb
+      create  app/channels/application_cable/connection.rb
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/jobs/application_job.rb
+      create  app/mailers/application_mailer.rb
+      create  app/models/application_record.rb
+      create  app/views/layouts/application.html.erb
+      create  app/views/layouts/mailer.html.erb
+      create  app/views/layouts/mailer.text.erb
+      create  app/assets/images/.keep
+      create  app/assets/javascripts/channels
+      create  app/assets/javascripts/channels/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  bin/update
+      create  bin/yarn
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/cable.yml
+      create  config/puma.rb
+      create  config/spring.rb
+      create  config/storage.yml
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/application_controller_renderer.rb
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/content_security_policy.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/cors.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_framework_defaults_5_2.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/master.key
+      append  .gitignore
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/apple-touch-icon-precomposed.png
+      create  public/apple-touch-icon.png
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  tmp
+      create  tmp/.keep
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor
+      create  vendor/.keep
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/fixtures/files
+      create  test/fixtures/files/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  test/system
+      create  test/system/.keep
+      create  test/application_system_test_case.rb
+      create  storage
+      create  storage/.keep
+      create  tmp/storage
+      create  tmp/storage/.keep
+      remove  config/initializers/cors.rb
+      remove  config/initializers/new_framework_defaults_5_2.rb
+         run  bundle install
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/............
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Following files may not be writable, so sudo is needed:
+  /Library/Ruby/Gems/2.3.0
+  /Library/Ruby/Gems/2.3.0/build_info
+  /Library/Ruby/Gems/2.3.0/cache
+  /Library/Ruby/Gems/2.3.0/doc
+  /Library/Ruby/Gems/2.3.0/extensions
+  /Library/Ruby/Gems/2.3.0/gems
+  /Library/Ruby/Gems/2.3.0/specifications
+  /usr/local/bin
+Fetching rake 12.3.2
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+
+Courtneys-MBP:coding-environment courtneyfink$ bundle install --path vendor/bundle
+Could not locate Gemfile
+Courtneys-MBP:coding-environment courtneyfink$ cd splurty
+-bash: cd: splurty: No such file or directory
+Courtneys-MBP:coding-environment courtneyfink$ cd vagrant/src/splurty
+-bash: cd: vagrant/src/splurty: No such file or directory
+Courtneys-MBP:coding-environment courtneyfink$ vagrant ssh
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-76-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Apr 24 03:49:56 UTC 2019
+
+  System load:  0.3               Processes:           82
+  Usage of /:   6.7% of 39.34GB   Users logged in:     0
+  Memory usage: 12%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Wed Apr 24 03:49:56 2019 from 10.0.2.2
+Now using node v7.10.0 (npm v4.2.0)
+
+Welcome to your coding environment!
+
+[ENV]:/vagrant $ cd /vagrant/src/splurty
+[ENV]:/vagrant/src/splurty $ rails server
+Could not find rake-12.3.2 in any of the sources
+Run `bundle install` to install missing gems.
+[ENV]:/vagrant/src/splurty $ bundle install
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/..............
+Fetching rake 12.3.2
+Installing rake 12.3.2
+Fetching concurrent-ruby 1.1.5
+Installing concurrent-ruby 1.1.5
+Fetching i18n 1.6.0
+Installing i18n 1.6.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Fetching activesupport 5.2.3
+Installing activesupport 5.2.3
+Using builder 3.2.3
+Fetching erubi 1.8.0
+Installing erubi 1.8.0
+Fetching mini_portile2 2.4.0
+Installing mini_portile2 2.4.0
+Fetching nokogiri 1.10.3
+Installing nokogiri 1.10.3 with native extensions
+Using rails-dom-testing 2.0.3
+Using crass 1.0.4
+Fetching loofah 2.2.3
+Installing loofah 2.2.3
+Using rails-html-sanitizer 1.0.4
+Fetching actionview 5.2.3
+Installing actionview 5.2.3
+Fetching rack 2.0.7
+Installing rack 2.0.7
+Using rack-test 1.1.0
+Fetching actionpack 5.2.3
+Installing actionpack 5.2.3
+Using nio4r 2.3.1
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.7.0
+Fetching actioncable 5.2.3
+Installing actioncable 5.2.3
+Fetching globalid 0.4.2
+Installing globalid 0.4.2
+Fetching activejob 5.2.3
+Installing activejob 5.2.3
+Using mini_mime 1.0.1
+Using mail 2.7.1
+Fetching actionmailer 5.2.3
+Installing actionmailer 5.2.3
+Fetching activemodel 5.2.3
+Installing activemodel 5.2.3
+Using arel 9.0.0
+Fetching activerecord 5.2.3
+Installing activerecord 5.2.3
+Fetching mimemagic 0.3.3
+Installing mimemagic 0.3.3
+Using marcel 0.3.3
+Fetching activestorage 5.2.3
+Installing activestorage 5.2.3
+Using public_suffix 3.0.3
+Fetching addressable 2.6.0
+Installing addressable 2.6.0
+Using io-like 0.3.0
+Fetching archive-zip 0.12.0
+Installing archive-zip 0.12.0
+Fetching bindex 0.7.0
+Installing bindex 0.7.0 with native extensions
+Fetching msgpack 1.2.10
+Installing msgpack 1.2.10 with native extensions
+Fetching bootsnap 1.4.3
+Installing bootsnap 1.4.3 with native extensions
+Using bundler 1.17.1
+Fetching byebug 11.0.1
+Installing byebug 11.0.1 with native extensions
+Fetching regexp_parser 1.4.0
+Installing regexp_parser 1.4.0
+Using xpath 3.2.0
+Fetching capybara 3.18.0
+Installing capybara 3.18.0
+Fetching childprocess 1.0.1
+Installing childprocess 1.0.1 with native extensions
+Fetching chromedriver-helper 2.1.1
+Installing chromedriver-helper 2.1.1
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Fetching method_source 0.9.2
+Installing method_source 0.9.2
+Fetching thor 0.20.3
+Installing thor 0.20.3
+Fetching railties 5.2.3
+Installing railties 5.2.3
+Using coffee-rails 4.2.2
+Fetching ffi 1.10.0
+Installing ffi 1.10.0 with native extensions
+Using multi_json 1.13.1
+Fetching jbuilder 2.8.0
+Installing jbuilder 2.8.0
+Using rb-fsevent 0.10.3
+Fetching rb-inotify 0.10.0
+Installing rb-inotify 0.10.0
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Fetching pg 1.1.4
+Installing pg 1.1.4 with native extensions
+Fetching puma 3.12.1
+Installing puma 3.12.1 with native extensions
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.1
+Fetching rails 5.2.3
+Installing rails 5.2.3
+Using rubyzip 1.2.2
+Using sass-listen 4.0.0
+Fetching sass 3.7.4
+Installing sass 3.7.4
+Fetching tilt 2.0.9
+Installing tilt 2.0.9
+Using sass-rails 5.0.7
+Fetching selenium-webdriver 3.141.5926
+Installing selenium-webdriver 3.141.5926
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.0
+Fetching uglifier 4.1.20
+Installing uglifier 4.1.20
+Using web-console 3.7.0
+Bundle complete! 18 Gemfile dependencies, 79 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from i18n:
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Post-install message from chromedriver-helper:
+
+  +--------------------------------------------------------------------+
+  |                                                                    |
+  |  NOTICE: chromedriver-helper is deprecated after 2019-03-31.       |
+  |                                                                    |
+  |  Please update to use the 'webdrivers' gem instead.                |
+  |  See https://github.com/flavorjones/chromedriver-helper/issues/83  |
+  |                                                                    |
+  +--------------------------------------------------------------------+
+
+Post-install message from sass:
+
+Ruby Sass has reached end-of-life and should no longer be used.
+
+* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+  primary implementation: https://sass-lang.com/install
+
+* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+  sassc gem: https://github.com/sass/sassc-ruby#readme
+
+* For more details, please refer to the Sass blog:
+  https://sass-lang.com/blog/posts/7828841
+
+[ENV]:/vagrant/src/splurty $ rails server
+=> Booting Puma
+=> Rails 5.2.3 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.1 (ruby 2.5.3-p105), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+^C- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2019-04-24 04:40:24 +0000 ===
+- Goodbye!
+Exiting
+[ENV]:/vagrant/src/splurty $ exit
+logout
+Connection to 127.0.0.1 closed.
+Courtneys-MBP:coding-environment courtneyfink$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Courtneys-MBP:coding-environment courtneyfink$ vagrant ssh
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-76-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Apr 24 04:14:02 UTC 2019
+
+  System load:  0.0               Processes:           83
+  Usage of /:   6.7% of 39.34GB   Users logged in:     1
+  Memory usage: 13%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+New release '16.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Wed Apr 24 04:14:02 2019 from 10.0.2.2
+Now using node v7.10.0 (npm v4.2.0)
+
+Welcome to your coding environment!
+
+[ENV]:/vagrant $ rails server
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-namespace], [--no-skip-namespace]            # Skip namespace (affects only isolated applications)
+  -r, [--ruby=PATH]                                        # Path to the Ruby binary of your choice
+                                                           # Default: /home/vagrant/.rbenv/versions/2.5.3/bin/ruby
+  -m, [--template=TEMPLATE]                                # Path to some application template (can be a filesystem path or URL)
+  -d, [--database=DATABASE]                                # Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                           # Default: sqlite3
+      [--skip-yarn], [--no-skip-yarn]                      # Don't use Yarn for managing JavaScript dependencies
+      [--skip-gemfile], [--no-skip-gemfile]                # Don't create a Gemfile
+  -G, [--skip-git], [--no-skip-git]                        # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                    # Skip source control .keep files
+  -M, [--skip-action-mailer], [--no-skip-action-mailer]    # Skip Action Mailer files
+  -O, [--skip-active-record], [--no-skip-active-record]    # Skip Active Record files
+      [--skip-active-storage], [--no-skip-active-storage]  # Skip Active Storage files
+  -P, [--skip-puma], [--no-skip-puma]                      # Skip Puma related files
+  -C, [--skip-action-cable], [--no-skip-action-cable]      # Skip Action Cable files
+  -S, [--skip-sprockets], [--no-skip-sprockets]            # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                  # Don't install Spring application preloader
+      [--skip-listen], [--no-skip-listen]                  # Don't generate configuration that depends on the listen gem
+      [--skip-coffee], [--no-skip-coffee]                  # Don't use CoffeeScript
+  -J, [--skip-javascript], [--no-skip-javascript]          # Skip JavaScript files
+      [--skip-turbolinks], [--no-skip-turbolinks]          # Skip turbolinks gem
+  -T, [--skip-test], [--no-skip-test]                      # Skip test files
+      [--skip-system-test], [--no-skip-system-test]        # Skip system test files
+      [--skip-bootsnap], [--no-skip-bootsnap]              # Skip bootsnap gem
+      [--dev], [--no-dev]                                  # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                                # Setup the application with Gemfile pointing to Rails repository
+      [--rc=RC]                                            # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                              # Skip loading of extra configuration options from .railsrc file
+      [--api], [--no-api]                                  # Preconfigure smaller stack for API only apps
+  -B, [--skip-bundle], [--no-skip-bundle]                  # Don't run bundle install
+      [--webpack=WEBPACK]                                  # Preconfigure for app-like JavaScript with Webpack (options: react/vue/angular/elm/stimulus)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+[ENV]:/vagrant $ cd /vagrant/src/splurty
+[ENV]:/vagrant/src/splurty $ rails server
+=> Booting Puma
+=> Rails 5.2.3 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.1 (ruby 2.5.3-p105), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+^C- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2019-04-24 17:43:56 +0000 ===
+- Goodbye!
+Exiting
+[ENV]:/vagrant/src/splurty $ rails generate controller quotes
+Running via Spring preloader in process 20556
+    conflict  app/controllers/quotes_controller.rb
+Overwrite /vagrant/src/splurty/app/controllers/quotes_controller.rb? (enter "h" fr help) [Ynaqdhm] rails server
+        Y - yes, overwrite
+        n - no, do not overwrite
+        a - all, overwrite this and all others
+        q - quit, abort
+        d - diff, show the differences between the old and the new
+        h - help, show this help
+        m - merge, run merge tool
+Overwrite /vagrant/src/splurty/app/controllers/quotes_controller.rb? (enter "h" for help) [Ynaqdhm] Y
+       force  app/controllers/quotes_controller.rb
+      invoke  erb
+       exist    app/views/quotes
+      invoke  test_unit
+      create    test/controllers/quotes_controller_test.rb
+      invoke  helper
+      create    app/helpers/quotes_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/quotes.coffee
+      invoke    scss
+      create      app/assets/stylesheets/quotes.scss
+[ENV]:/vagrant/src/splurty $ rails server
+=> Booting Puma
+=> Rails 5.2.3 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.1 (ruby 2.5.3-p105), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+

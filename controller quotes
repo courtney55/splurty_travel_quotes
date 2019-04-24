@@ -1,0 +1,128 @@
+Last login: Tue Apr 23 19:29:01 on ttys000
+Courtneys-MBP:~ courtneyfink$ cd ~/Desktop/coding-environment
+Courtneys-MBP:coding-environment courtneyfink$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Courtneys-MBP:coding-environment courtneyfink$ cd /vagrant/src/splurty
+-bash: cd: /vagrant/src/splurty: No such file or directory
+Courtneys-MBP:coding-environment courtneyfink$ vagrant destroy
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Forcing shutdown of VM...
+==> default: Destroying VM and associated drives...
+Courtneys-MBP:coding-environment courtneyfink$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'university-bootcamp/coding-environment-v1'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: coding-environment_default_1556077704586_6007
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 3000 (guest) => 3030 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default: 
+    default: Guest Additions Version: 4.3.34
+    default: VirtualBox Version: 6.0
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/courtneyfink/Desktop/coding-environment
+Courtneys-MBP:coding-environment courtneyfink$ vagrant ssh
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-76-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Apr 24 03:48:39 UTC 2019
+
+  System load:  0.96              Processes:           91
+  Usage of /:   6.7% of 39.34GB   Users logged in:     0
+  Memory usage: 16%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Thu Nov  1 00:34:53 2018 from 10.0.2.2
+Now using node v7.10.0 (npm v4.2.0)
+
+Welcome to your coding environment!
+
+[ENV]:/vagrant $ rails generate controller quotes
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-namespace], [--no-skip-namespace]            # Skip namespace (affects only isolated applications)
+  -r, [--ruby=PATH]                                        # Path to the Ruby binary of your choice
+                                                           # Default: /home/vagrant/.rbenv/versions/2.5.3/bin/ruby
+  -m, [--template=TEMPLATE]                                # Path to some application template (can be a filesystem path or URL)
+  -d, [--database=DATABASE]                                # Preconfigure for selected database (options: mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                           # Default: sqlite3
+      [--skip-yarn], [--no-skip-yarn]                      # Don't use Yarn for managing JavaScript dependencies
+      [--skip-gemfile], [--no-skip-gemfile]                # Don't create a Gemfile
+  -G, [--skip-git], [--no-skip-git]                        # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                    # Skip source control .keep files
+  -M, [--skip-action-mailer], [--no-skip-action-mailer]    # Skip Action Mailer files
+  -O, [--skip-active-record], [--no-skip-active-record]    # Skip Active Record files
+      [--skip-active-storage], [--no-skip-active-storage]  # Skip Active Storage files
+  -P, [--skip-puma], [--no-skip-puma]                      # Skip Puma related files
+  -C, [--skip-action-cable], [--no-skip-action-cable]      # Skip Action Cable files
+  -S, [--skip-sprockets], [--no-skip-sprockets]            # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                  # Don't install Spring application preloader
+      [--skip-listen], [--no-skip-listen]                  # Don't generate configuration that depends on the listen gem
+      [--skip-coffee], [--no-skip-coffee]                  # Don't use CoffeeScript
+  -J, [--skip-javascript], [--no-skip-javascript]          # Skip JavaScript files
+      [--skip-turbolinks], [--no-skip-turbolinks]          # Skip turbolinks gem
+  -T, [--skip-test], [--no-skip-test]                      # Skip test files
+      [--skip-system-test], [--no-skip-system-test]        # Skip system test files
+      [--skip-bootsnap], [--no-skip-bootsnap]              # Skip bootsnap gem
+      [--dev], [--no-dev]                                  # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                                # Setup the application with Gemfile pointing to Rails repository
+      [--rc=RC]                                            # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                              # Skip loading of extra configuration options from .railsrc file
+      [--api], [--no-api]                                  # Preconfigure smaller stack for API only apps
+  -B, [--skip-bundle], [--no-skip-bundle]                  # Don't run bundle install
+      [--webpack=WEBPACK]                                  # Preconfigure for app-like JavaScript with Webpack (options: react/vue/angular/elm/stimulus)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+[ENV]:/vagrant $ 
