@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Mate+SC');
 
 .clear {
   clear: both;
@@ -38,6 +39,8 @@
   color: black;
   font-size: 25px;
   border-bottom: 1px solid #dfdfdf;
+  font-family: 'Mate SC', serif;
+  font-weight: bold;
 }
 
 header {
@@ -46,6 +49,14 @@ header {
 
 hr {
   clear:both;
+}
+
+h1 {
+  font-family: 'Mate SC', serif;
+}
+
+h2 {
+  font-family: 'Mate SC', serif;
 }
 
 
