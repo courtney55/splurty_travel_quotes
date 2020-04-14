@@ -1,25 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Splurty
 
-Things you may want to cover:
+Splurty allows you to upload your own travel quotes or read quotes uploaded to the app. Users are also able to browse new quotes by refreshing the page or clicking on the logo at the top of the page.
 
-* Ruby version
+Ruby version
+2.5.3
 
-* System dependencies
+Try it out
 
-* Configuration
+To try out this application, visit https://splurty-courtney-fink.herokuapp.com/
 
-* Database creation
+Tools used
 
-* Database initialization
+-Bootstrap
+-Heroku
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# improved-octo-dollop
